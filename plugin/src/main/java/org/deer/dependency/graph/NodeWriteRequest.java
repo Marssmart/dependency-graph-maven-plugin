@@ -32,11 +32,11 @@ public class NodeWriteRequest implements Neo4jRequest {
             }
 
             if (StringUtils.isNotBlank(artifact.getScope())) {
-                labels.add(":" + CaseFormat.LOWER_CAMEL.converterTo(CaseFormat.UPPER_CAMEL).convert(artifact.getScope()));
+                labels.add(":" + CaseFormat.LOWER_HYPHEN.converterTo(CaseFormat.UPPER_CAMEL).convert(artifact.getScope()));
             }
 
             if (StringUtils.isNotBlank(artifact.getType())) {
-                labels.add(":" + CaseFormat.LOWER_CAMEL.converterTo(CaseFormat.UPPER_CAMEL).convert(artifact.getType()));
+                labels.add(":" + CaseFormat.LOWER_HYPHEN.converterTo(CaseFormat.UPPER_CAMEL).convert(artifact.getType()));
             }
 
             final String mergeQuery = String.join(COMMA,
